@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>UI Controls – Практичне завдання</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f8f9fa;
+        color: #333;
+      }
+
+      .page-header {
+        background: #0077b6;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .page-header__title {
+        margin: 0;
+      }
+
+      .page-header__subtitle {
+        margin: 5px 0 0;
+      }
+
+      .ui-section {
+        background: white;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 900px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .ui-section__title {
+        color: #0077b6;
+        margin-bottom: 10px;
+      }
+
+      .ui-section__desc {
+        margin-bottom: 15px;
+      }
+
+      .ui-example {
+        margin: 15px 0;
+        padding: 10px;
+        background: #f1f1f1;
+        border-radius: 8px;
+      }
+
+      .ui-images {
+        margin-top: 10px;
+      }
+
+      .ui-images__item {
+        max-width: 300px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+
+      /* Tooltip */
+      .tooltip {
+        position: relative;
+        display: inline-block;
+      }
+
+      .tooltip__text {
+        visibility: hidden;
+        width: 160px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 8px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -80px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .tooltip__text::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #333 transparent transparent transparent;
+      }
+
+      .tooltip:hover .tooltip__text {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      /* Table (data grid) */
+      .data-grid {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .data-grid th,
+      .data-grid td {
+        border: 1px solid #ccc;
+        padding: 8px 10px;
+        text-align: left;
+      }
+
+      .data-grid th {
+        background: #f1f1f1;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page-header">
+      <h1 class="page-header__title">Практичне завдання: UI Controls</h1>
+      <p class="page-header__subtitle">Опис і приклади елементів інтерфейсу</p>
+    </header>
+
+    <section class="ui-section">
+      <h2 class="ui-section__title">1. RadioButton</h2>
+      <p class="ui-section__desc">
+        Елемент, що дозволяє вибрати тільки один варіант із групи.
+      </p>
+      <div class="ui-example">
+        <label><input type="radio" name="color" checked /> Червоний</label>
+        <label><input type="radio" name="color" /> Зелений</label>
+        <label><input type="radio" name="color" /> Синій</label>
+      </div>
+      <div class="ui-images">
+        <img
+          src="screens/radio1.png"
+          alt="Radio приклад 1"
+          class="ui-images__item"
+        />
+        <img
+          src="screens/radio2.png"
+          alt="Radio приклад 2"
+          class="ui-images__item"
+        />
+      </div>
+    </section>
+
+    <section class="ui-section">
+      <h2 class="ui-section__title">2. Checkbox</h2>
+      <p class="ui-section__desc">
+        Елемент для вибору кількох варіантів одночасно.
+      </p>
+      <div class="ui-example">
+        <label><input type="checkbox" checked /> Музика</label>
+        <label><input type="checkbox" /> Спорт</label>
+        <label><input type="checkbox" /> Подорожі</label>
+      </div>
+      <div class="ui-images">
+        <img
+          src="screens/checkbox1.png"
+          alt="Checkbox приклад 1"
+          class="ui-images__item"
+        />
+        <img
+          src="screens/checkbox2.png"
+          alt="Checkbox приклад 2"
+          class="ui-images__item"
+        />
+      </div>
+    </section>
+
+    <section class="ui-section">
+      <h2 class="ui-section__title">3. Text Input</h2>
+      <p class="ui-section__desc">Поле для введення тексту користувачем.</p>
+      <div class="ui-example">
+        <input type="text" placeholder="Ваше ім'я" />
+      </div>
+      <div class="ui-images">
+        <img
+          src="screens/text1.png"
+          alt="Text input 1"
+          class="ui-images__item"
+        />
+        <img
+          src="screens/text2.png"
+          alt="Text input 2"
+          class="ui-images__item"
+        />
+      </div>
+    </section>
+
+    <section class="ui-section">
+      <h2 class="ui-section__title">4. Tabs</h2>
+      <p class="ui-section__desc">
+        Вкладки дозволяють організувати контент у різних секціях.
+      </p>
+      <div class="ui-example">
+        <button>Головна</button>
+        <button>Профіль</button>
+        <button>Налаштування</button>
+      </div>
+      <div class="ui-images">
+        <img
+          src="screens/tabs1.png"
+          alt="Tabs приклад 1"
+          class="ui-images__item"
+        />
+        <img
+          src="screens/tabs2.png"
+          alt="Tabs приклад 2"
+          class="ui-images__item"
+        />
+      </div>
+    </section>
+
+    <section class="ui-section">
+      <h2 class="ui-section__title">5. Button</h2>
+      <p class="ui-section__desc">Кнопка виконує дію при натисканні.</p>
+      <div class="ui-example">
+        <button>Надіслати</button>
+      </div>
+      <div class="ui-images">
+        <img
+          src="screens/button1.png"
+          alt="Button приклад 1"
+          class="ui-images__item"
+        />
+        <img
+          src="screens/button2.png"
+          alt="Button приклад 2"
+          class="ui-images__item"
+        />
+      </div>
+    </section>
+
+    <section class="ui-section">
+      <h2 class="ui-section__title">6. Text Label</h2>
+      <p class="ui-section__desc">
+        Текстовий напис, який пояснює інші елементи.
+      </p>
+      <div class="ui-example">
+        <label for="email">Введіть email:</label>
+        <input type="email" id="email" />
+      </div>
+      <div class="ui-images">
+        <img
+          src="screens/label1.png"
+          alt="Label приклад 1"
+          class="ui-images__item"
+        />
+        <img
+          src="screens/label2.png"
+          alt="Label приклад 2"
+          class="ui-images__item"
+        />
+      </div>
+    </section>
+
+    <section class="ui-section">
+      <h2 class="ui-section__title">7. Link</h2>
+      <p class="ui-section__desc">
+        Гіперпосилання для переходу на іншу сторінку чи ресурс.
+      </p>
+      <div class="ui-example">
+        <a href="https://www.google.com" target="_blank">Google</a>
+      </div>
+      <div class="ui-images">
+        <img
+          src="screens/link1.png"
+          alt="Link приклад 1"
+          class="ui-images__item"
+        />
+        <img
+          src="screens/link2.png"
+          alt="Link приклад 2"
+          class="ui-images__item"
+        />
+      </div>
+    </section>
+
+    <section class="ui-section">
+      <h2 class="ui-section__title">8. Tooltip</h2>
+      <p class="ui-section__desc">
+        Невелике підказка, яка з’являється при наведенні.
+      </p>
+      <div class="ui-example">
+        <div class="tooltip">
+          <button>Наведи курсор</button>
+          <span class="tooltip__text">Це підказка!</span>
+        </div>
+      </div>
+      <div class="ui-images">
+        <img
+          src="screens/tooltip1.png"
+          alt="Tooltip приклад 1"
+          class="ui-images__item"
+        />
+        <img
+          src="screens/tooltip2.png"
+          alt="Tooltip приклад 2"
+          class="ui-images__item"
+        />
+      </div>
+    </section>
+
+    <section class="ui-section">
+      <h2 class="ui-section__title">9. Dropdown List</h2>
+      <p class="ui-section__desc">
+        Випадаючий список для вибору одного значення.
+      </p>
+      <div class="ui-example">
+        <select>
+          <option>Україна</option>
+          <option>Польща</option>
+          <option>Німеччина</option>
+        </select>
+      </div>
+      <div class="ui-images">
+        <img
+          src="screens/dropdown1.png"
+          alt="Dropdown приклад 1"
+          class="ui-images__item"
+        />
+        <img
+          src="screens/dropdown2.png"
+          alt="Dropdown приклад 2"
+          class="ui-images__item"
+        />
+      </div>
+    </section>
+
+    <section class="ui-section">
+      <h2 class="ui-section__title">10. Data Grid</h2>
+      <p class="ui-section__desc">
+        Таблиця для відображення структурованих даних.
+      </p>
+      <div class="ui-example">
+        <table class="data-grid">
+          <tr>
+            <th>ID</th>
+            <th>Ім’я</th>
+            <th>Email</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Анна</td>
+            <td>anna@example.com</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Олег</td>
+            <td>oleg@example.com</td>
+          </tr>
+        </table>
+      </div>
+      <div class="ui-images">
+        <img
+          src="screens/grid1.png"
+          alt="Data grid приклад 1"
+          class="ui-images__item"
+        />
+        <img
+          src="screens/grid2.png"
+          alt="Data grid приклад 2"
+          class="ui-images__item"
+        />
+      </div>
+    </section>
+  </body>
+</html>
